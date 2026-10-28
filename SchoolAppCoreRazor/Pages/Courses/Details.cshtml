@@ -1,0 +1,23 @@
+@page "{id:int?}"
+@model SchoolAppCoreRazor.Pages.Courses.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<h4>Course</h4>
+<hr />
+<dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Item.CourseID</dd>
+        <dt class="col-sm-3">Title</dt>
+        <dd class="col-sm-9">@Model.Item.Title</dd>
+        <dt class="col-sm-3">Credits</dt>
+        <dd class="col-sm-9">@Model.Item.Credits</dd>
+        <dt class="col-sm-3">Department</dt>
+        <dd class="col-sm-9">@Model.Item.Department?.Name</dd>
+</dl>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Item.CourseID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

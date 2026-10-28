@@ -1,0 +1,16 @@
+@page
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="text-center my-4">
+    <h1 class="display-5">School Management (Razor Pages)</h1>
+    <p>ASP.NET Core Razor Pages + Entity Framework Core - Database First (SchoolDB)</p>
+</div>
+<div class="row">
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Departments</h5><a class="btn btn-outline-primary" asp-page="/Departments/Index">Manage Departments</a></div></div></div>
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Instructors</h5><a class="btn btn-outline-primary" asp-page="/Instructors/Index">Manage Instructors</a></div></div></div>
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Courses</h5><a class="btn btn-outline-primary" asp-page="/Courses/Index">Manage Courses</a></div></div></div>
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Students</h5><a class="btn btn-outline-primary" asp-page="/Students/Index">Manage Students</a></div></div></div>
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Enrollments</h5><a class="btn btn-outline-primary" asp-page="/Enrollments/Index">Manage Enrollments</a></div></div></div>
+        <div class="col-md-4 mb-3"><div class="card h-100"><div class="card-body"><h5 class="card-title">Report (.rdlc)</h5><a class="btn btn-outline-success" asp-page="/Reports/Enrollments">Enrollment report</a></div></div></div>
+</div>

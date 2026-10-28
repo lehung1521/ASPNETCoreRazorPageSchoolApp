@@ -1,0 +1,31 @@
+@page "{id:int?}"
+@model SchoolAppCoreRazor.Pages.Departments.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<h3>Are you sure you want to delete this?</h3>
+@if (Model.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Item.DepartmentID</dd>
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Item.Name</dd>
+        <dt class="col-sm-3">Budget</dt>
+        <dd class="col-sm-9">@Model.Item.Budget.ToString("N2")</dd>
+        <dt class="col-sm-3">Start Date</dt>
+        <dd class="col-sm-9">@Model.Item.StartDate.ToString("yyyy-MM-dd")</dd>
+    </dl>
+
+    <form method="post">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

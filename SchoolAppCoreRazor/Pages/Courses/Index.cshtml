@@ -1,0 +1,38 @@
+@page
+@model SchoolAppCoreRazor.Pages.Courses.IndexModel
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h1>Courses</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Credits</th>
+            <th>Department</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items)
+{
+        <tr>
+            <td>@item.CourseID</td>
+            <td>@item.Title</td>
+            <td>@item.Credits</td>
+            <td>@item.Department?.Name</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CourseID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CourseID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CourseID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
